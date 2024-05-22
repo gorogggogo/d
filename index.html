@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bingo Number Caller</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #numberDisplay {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+    #callButton {
+        padding: 10px 20px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div id="numberDisplay">--</div>
+<button id="callButton">数字を呼ぶ</button>
+<script>
+    const numberDisplay = document.getElementById('numberDisplay');
+    const callButton = document.getElementById('callButton');
+
+    callButton.addEventListener('click', callNumber);
+
+    function callNumber() {
+        const randomNumber = getRandomNumber();
+        numberDisplay.textContent = randomNumber;
+    }
+
+    function getRandomNumber() {
+        return Math.floor(Math.random() * 75) + 1; // 1から75までのランダムな数字を生成
+    }
+</script>
+</body>
+</html>
